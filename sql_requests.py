@@ -102,7 +102,7 @@ async def add_alt(user_id: str, alt_name: str) -> str or None:
 
     if len(acc_list) > 40:
         return "AltsListLimit"
-    elif alt_name.lower() in map(lambda name: name.lower(), acc_list):
+    elif alt_name.lower() in [name.lower() for name in acc_list]:
         return "AlreadyInDB"
 
     acc_list.append(alt_name)
@@ -116,7 +116,7 @@ async def add_alt(user_id: str, alt_name: str) -> str or None:
 async def remove_alt(user_id: str, alt_name: str) -> bool:
     user_data = await get_user(user_id)
     acc_list = user_data[1].split("#")
-    lower_acc_list = list(map(lambda name: name.lower(), acc_list))
+    lower_acc_list = [name.lower() for name in acc_list]
 
     if alt_name.lower() in lower_acc_list:
         acc_list.pop(lower_acc_list.index(alt_name.lower()))

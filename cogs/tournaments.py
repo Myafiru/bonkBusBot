@@ -19,6 +19,7 @@ class Tournaments(Cog):
             await interaction.send("There are no tournaments yet")
         else:
             embeds = list()
+
             for tourney in tourney_list:
                 embed = Embed(color=0xc93c3e)
                 embed.title = tourney[1]
@@ -29,6 +30,7 @@ class Tournaments(Cog):
                 embed.add_field(name="Winner", value=tourney[5])
                 embed.add_field(name="2nd place", value=tourney[6])
                 embed.add_field(name="3rd place", value=tourney[7])
+
                 embeds.append(embed)
 
             await interaction.send(embeds=embeds)

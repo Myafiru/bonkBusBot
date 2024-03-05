@@ -12,18 +12,18 @@ bot = Bot(intents=nc.Intents.all())
 cogs = [
     "cogs.add_alt",
     "cogs.display_members",
+    "cogs.get_tournament_participants",
+    "cogs.match_result",
     "cogs.profile",
+    "cogs.register_tournament",
+    "cogs.remove_alt",
     "cogs.send_embed",
     "cogs.send_message",
-    "cogs.remove_alt",
-    "cogs.match_result",
-    "cogs.tournaments",
-    "cogs.register_tournament",
-    "cogs.start_tournament_registration",
-    "cogs.get_tournament_participants",
     "cogs.set_log_channel",
     "cogs.set_match_results_channel",
-    "cogs.set_tournaments_channel"
+    "cogs.set_tournaments_channel",
+    "cogs.start_tournament_registration",
+    "cogs.tournaments"
 ]
 
 bot.load_extensions(cogs)
